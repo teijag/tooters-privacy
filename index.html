@@ -110,32 +110,31 @@
 
   <div class="intro">
     Tooters is a small, friends-only app for logging and sharing &ldquo;toots&rdquo; with people you choose to add. It
-    is operated by Blink Studio. This
-    page explains what the app collects, why, who it's shared with, and how you can get it deleted. There&rsquo;s no
-    sign-up with your real name, email, or phone number, and your content is never sold or shared with advertisers.
+    is operated by Blink Studio. This page explains what the app collects, why, who it's shared with, and how you can
+    get it deleted. There&rsquo;s no sign-up with your real name, email, or phone number, and your content is never
+    sold or shared with advertisers.
   </div>
 
   <section>
     <h2>Information we collect</h2>
     <ul>
       <li><strong>An anonymous account ID.</strong> Signing up doesn&rsquo;t ask for an email, password, or phone
-        number &mdash; the app creates a random, anonymous account ID the first time you open it (via Supabase
-        Anonymous Auth), and that&rsquo;s what signs you back in on later launches. The session token is stored only
-        on your device.</li>
+        number &mdash; the app creates a random, anonymous account ID the first time you open it, and that&rsquo;s
+        what signs you back in on later launches. The session token is stored only on your device.</li>
       <li><strong>Your profile.</strong> The username and avatar color you choose, plus a shareable friend code derived
         from your account ID.</li>
       <li><strong>Friend connections.</strong> Who you&rsquo;ve sent or accepted friend requests with.</li>
-      <li><strong>Toots you log.</strong> A severity rating, an optional note (up to 240 characters), the time you
-        logged it, and any emoji reactions on it.</li>
+      <li><strong>Activity you log.</strong> A severity rating, an optional note, the time you logged it, and any
+        emoji reactions on it.</li>
       <li><strong>On-device preferences.</strong> Things like your chosen notification sound and whether notifications
-        are on &mdash; these stay in iOS's local storage on your device and are never sent to our servers.</li>
+        are on. These stay in iOS's local storage on your device and are never sent to our servers.</li>
     </ul>
     <h3>What we don't collect</h3>
     <ul>
-      <li>No analytics, advertising, or crash-reporting SDKs are built into the app, so we don't receive crash logs,
-        device identifiers (like an IDFA), or usage analytics.</li>
-      <li>No sign-in through Apple, Google, Facebook, or any other third-party identity provider &mdash; authentication
-        is handled entirely by our database provider, Supabase.</li>
+      <li>No analytics or advertising SDKs are built into the app, so we don't receive device identifiers (like an
+        IDFA) or usage analytics.</li>
+      <li>No sign-in through Apple, Google, Facebook, or any other third-party identity provider. Authentication is
+        handled entirely by our database.</li>
       <li>No payment information, since the app has no purchases.</li>
     </ul>
   </section>
@@ -144,8 +143,7 @@
     <h2>How we use this information</h2>
     <ul>
       <li>To run the app&rsquo;s core features: your feed, friend requests, and reactions.</li>
-      <li><strong>Notifications.</strong> If you turn on &ldquo;Notify me when friends post,&rdquo; you'll get a
-        notification &mdash; currently scheduled locally on your device.</li>
+      <li>Notifications. If you turn on &ldquo;Notify me when friends post,&rdquo; you'll get a push notification.</li>
       <li>To apply basic abuse prevention, like blocking a short list of offensive usernames and limiting how many
         times a friend request can be resent.</li>
     </ul>
@@ -153,30 +151,24 @@
 
   <section>
     <h2>Third parties involved</h2>
-    <p>Your account and toot data is stored and processed by <strong>Supabase</strong>
-      (<a href="https://supabase.com/privacy">supabase.com</a>), a database hosting provider that acts on our behalf
-      (a processor, not an independent user of your data). Supabase infrastructure is hosted in data centers that may
-      be located outside your own country &mdash; currently the United States. By using the app, you consent to your
-      information being processed there.</p>
+    <p>Your account and toot data is stored and processed by Supabase, a database hosting provider that acts on our
+      behalf (a processor, not an independent user of your data). Supabase infrastructure is hosted in data centers
+      that may be located outside your own country &mdash; currently the United States. By using the app, you consent
+      to your information being processed there.</p>
   </section>
 
   <section>
     <h2>Who can see your information</h2>
-    <p>Your toots and profile are visible only to people you&rsquo;ve added as friends (and to you). Database access
-      rules enforce this directly on the server &mdash; a signed-in session can only read its own data or a
-      friend&rsquo;s, never anyone else&rsquo;s. We don&rsquo;t sell your information or share it with advertisers,
-      and there's no public profile or discovery feature.</p>
+    <p>Your activity and profile are visible only to people you&rsquo;ve added as friends (and to you). We don&rsquo;t
+      sell your information or share it with advertisers, and there's no public profile or discovery feature.</p>
   </section>
 
   <section>
     <h2>Security</h2>
     <p>Data is encrypted in transit between the app and Supabase (HTTPS/TLS). Access to your data is restricted at the
-      database level by row-level security rules, not just by the app's own code. No method of transmission or
-      storage is 100% secure, so we can't guarantee absolute security &mdash; but there is also no reason for this app
-      to be a meaningful target, since it stores no financial, government ID, or health information.</p>
-    <p>If we become aware of a breach that compromises your personal information, we'll notify affected users by the
-      best contact means available (such as an in-app message) and, where legally required, notify the appropriate
-      authority.</p>
+      database level. There is also no reason for this app to be a meaningful target, since it stores no financial,
+      government ID, or health information. If we ever have a breach, we'll notify affected users and the appropriate
+      authority where required.</p>
   </section>
 
   <section>
@@ -197,17 +189,19 @@
   <section>
     <h2>Account recovery</h2>
     <p>There's no password and no linked email, so there's no "forgot password" flow. Your account lives in your
-      device's local session storage &mdash; if you uninstall the app, reset your device, or switch devices, that
-      session can't be recovered or transferred, and a fresh install creates a brand-new, unconnected account.</p>
+      device's local session storage. If you uninstall the app or erase your device without restoring a backup, that
+      session can't be recovered, and a fresh install creates a brand-new, unconnected account. Moving to a new
+      device via an iCloud or computer backup of your old one may carry the session over automatically, though that
+      isn't guaranteed, and we haven't tested it ourselves.</p>
   </section>
 
   <section>
     <h2>Data retention and deletion</h2>
-    <p>Your profile, friend code, username, and toots are kept for as long as your account exists &mdash; there's no
+    <p>Your profile, friend code, username, and activity are kept for as long as your account exists. There's no
       automatic expiry. Deleting your account (Settings &rarr; Delete my account) removes this data from our live
-      database immediately. Supabase, our hosting provider, may retain the deleted data in routine infrastructure
-      backups for a limited period before those backups are automatically cycled out; we don't separately extract or
-      restore your data from those backups once you've deleted your account.</p>
+      database immediately. Our database may retain the deleted data in routine infrastructure backups for a limited
+      period before those backups are automatically cycled out; we don't separately extract or restore your data
+      from those backups once you've deleted your account.</p>
   </section>
 
   <section>
