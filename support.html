@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Tooters Support</title>
+<meta name="description" content="Support and FAQ for the Tooters app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF9FC;
+    --surface: #FFFFFF;
+    --border: #E6E2EF;
+    --text: #1C1726;
+    --text-muted: #635C73;
+    --accent: #7C5CFC;
+    --accent-soft: #F1EDFF;
+    --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141019;
+      --surface: #1D1726;
+      --border: #332B42;
+      --text: #F3F0FA;
+      --text-muted: #A89FBD;
+      --accent: #B49BFF;
+      --accent-soft: #241B38;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  ::selection { background: var(--accent); color: #fff; }
+  a:focus-visible, :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .skip-link {
+    position: absolute; left: -9999px; top: 0; z-index: 10;
+    background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0;
+  }
+  .skip-link:focus { left: 0; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding: 48px 16px;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  .masthead { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .masthead .mark {
+    font-size: 28px; width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--accent-soft); border-radius: 14px; flex-shrink: 0;
+  }
+  .masthead h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin: 0; }
+  .masthead .meta { font-size: 13px; color: var(--text-muted); margin: 2px 0 0; }
+  .intro {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 20px 22px; margin-bottom: 36px; font-size: 15px; color: var(--text-muted);
+  }
+  h2 {
+    font-family: var(--font-display); font-size: 17px; font-weight: 700;
+    margin: 40px 0 12px; padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  section:first-of-type h2 { border-top: none; padding-top: 0; }
+  p, li { font-size: 15px; color: var(--text); }
+  ul { margin: 10px 0; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  li strong { color: var(--text); font-weight: 600; }
+  a { color: var(--accent); }
+  .callout {
+    background: var(--accent-soft); border-radius: 12px; padding: 14px 16px;
+    font-size: 14px; color: var(--text-muted); margin-top: 14px;
+  }
+  footer {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--text-muted);
+  }
+  @media print {
+    body { background: #fff; color: #000; padding: 0 24px; }
+    .intro, .callout { background: #fff; border: 1px solid #999; }
+    a { color: #000; text-decoration: underline; }
+    a[href^="mailto:"]::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #555; }
+    .skip-link { display: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content">
+  <div class="masthead">
+    <div class="mark">&#x1F4A8;</div>
+    <div>
+      <h1>Tooters Support</h1>
+      <p class="meta">Blink Studio</p>
+    </div>
+  </div>
+
+  <div class="intro">
+    Questions, bug reports, or something just not working right? Reach us at
+    <a href="mailto:support.blinkstudio@gmail.com?subject=Tooters%20support">support.blinkstudio@gmail.com</a>
+    and we'll get back to you.
+  </div>
+
+  <section>
+    <h2>Frequently asked questions</h2>
+
+    <p><strong>I'm not getting notifications when friends post.</strong><br>
+      Check Settings &rarr; make sure &ldquo;Notify me when friends post&rdquo; is on, and that Tooters has
+      notification permission in iOS Settings &rarr; Tooters &rarr; Notifications.</p>
+
+    <p><strong>How do I add a friend?</strong><br>
+      From Settings, scan their QR code or share your own Toot Code for them to enter.</p>
+
+    <p><strong>Do I lose my account if I delete the app?</strong><br>
+      Yes. Deleting Tooters, erasing your device, or restoring an old backup ends your account for good, since there's
+      no email or password to recover it with. A regular App Store <em>update</em> is different and never touches your
+      account.</p>
+
+    <p><strong>How do I delete my account and data?</strong><br>
+      Settings &rarr; Delete my account. This is permanent and removes your profile, friends, and everything you've
+      logged. See our <a href="index.html">Privacy Policy</a> for details.</p>
+
+    <p><strong>Something's broken, or I have an idea.</strong><br>
+      Email us at <a href="mailto:support.blinkstudio@gmail.com?subject=Tooters%20support">support.blinkstudio@gmail.com</a>
+      &mdash; we read every message.</p>
+  </section>
+
+  <footer>Tooters &mdash; a friends-only app for logging toots.</footer>
+</main>
+</body>
+</html>
